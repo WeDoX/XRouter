@@ -1,4 +1,4 @@
-package com.onedream.xrouter;
+package com.onedream.xrouter.base;
 
 import android.app.Application;
 

@@ -8,14 +8,8 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_send"
+        android:id="@+id/btn_skip"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Hello World!" />
-
-    <Button
-        android:id="@+id/btn_get"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Hello World!12" />
+        android:text="跳转界面" />
 </LinearLayout>

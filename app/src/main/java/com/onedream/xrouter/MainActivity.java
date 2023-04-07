@@ -1,52 +1,37 @@
 package com.onedream.xrouter;
 
-import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.onedream.xrouter.base.BaseActivity;
+import com.onedream.xrouter.export.two.TwoRouterUtils;
 
-import com.onedream.xrouter_annotation.Route;
-import com.onedream.xrouter_api.XRouter;
 
-@Route("/me/main")
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //
-        findViewById(R.id.btn_send).setOnClickListener(new View.OnClickListener() {
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void initEvent() {
+        findViewById(R.id.btn_skip).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onClickBtnSend(view);
+                TwoRouterUtils.navigationTwoPage("vam_jdallen_WeDoX");
             }
         });
 
-        findViewById(R.id.btn_get).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onClickBtnGet(view);
-            }
-        });
-
     }
-
-    private void showToast(String msg){
-        Toast.makeText(MainActivity.this,msg,Toast.LENGTH_SHORT).show();
-    }
-
-    public void onClickBtnSend(View view){
-        showToast("click btn_send 我是计算机和"+view.getId());
-    }
-
-    public void onClickBtnGet(View view){
-        showToast("我是第二个函数是"+view.getId());
-        //
-        XRouter.build("/me/two").withString("name","我是陈贵坚").navigation();
-        //TwoActivity.actionStart(MainActivity.this);
-    }
-
 
 }

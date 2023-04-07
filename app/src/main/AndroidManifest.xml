@@ -3,7 +3,7 @@
     package="com.onedream.xrouter">
 
     <application
-        android:name="com.onedream.xrouter.App"
+        android:name="com.onedream.xrouter.base.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.onedream.TwoActivity"
+            android:name=".module.two.TwoActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
